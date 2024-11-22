@@ -1,0 +1,357 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: "Roboto Slab", serif;
+}
+/* body{
+    background-color: black;
+    color:  white;
+}
+ */
+
+
+nav{
+    /* border: 2px solid black; */
+    height: 56px;
+    padding: 0 16px;
+}
+nav img{
+    height: 24px;
+}
+
+.container{
+    height: 56px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    position: sticky;
+    top: 0;
+}
+ .container .box1{
+    height: 100%;
+    width: 169px; 
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container .box2{
+    height: 100%;
+    width: 732px; 
+    /* border: 2px solid red; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container .box3{
+    height: 100%;
+    width: 156px; 
+    /* border: 2px solid red; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#button{
+    height: 24px;
+    width: 24px;
+    border-radius: 100px;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.ytlogo{
+    width: 101px;
+    height: 20px;
+    display: flex;
+    /* border: 2px solid black; */
+}
+.searchbox{
+    width: 568px;
+    height: 40px;
+    border-radius: 25px;
+    border : 1px solid #939393d9
+}
+.main{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid black; */
+    height: auto;
+    width: 100vw;
+
+/* 
+    background-color: red;
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    border: 2px solid black;
+    height: auto;
+    width: 100vw; */
+
+
+}
+
+
+.lists{
+    /* border: 2px solid black; */
+    /* background-color: yellow; */
+    width: 15vw;
+
+}
+.videos{
+    /* border: 2px solid black; */
+    /* background-color: orange; */
+    width: 100%;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 20px;
+
+}
+.vid{
+    /* border: 2px solid black; */
+    /* background-color: aquamarine; */
+    /* padding: 10px; */
+    margin: 10px;
+    
+}
+
+.vid img{
+    width: 100%;
+    height: auto;
+}
+
+.vid p{
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(15, 15, 15);
+    padding: 15px 0px;
+}
+
+.vid h4{
+    padding: 5px 0;
+}
+
+@media (max-width : 1024px) {
+    .container .box2{
+        width: 60%;
+        max-width: 100%;
+        flex-grow: 1;
+    }
+    .videos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* For mobile devices (screens less than 768px) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: space-between;
+        padding: 0px 8px;
+    }
+
+    .container {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .box1, .box2, .box3 {
+        flex : 1;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    .searchbox {
+        width: 100%;
+        max-width: 300px;
+        margin: 5px auto; ;
+    }
+    .box3 #button {
+        height: 20px; /* Adjust button size for smaller screens */
+        width: 20px;
+    }
+    .ytlogo {
+        width: 80px; /* Adjust YouTube logo size */
+        height: auto;
+    }
+    .main {
+        flex-direction: column;
+    }
+
+    .lists {
+        width: 100%;
+    }
+
+    .videos {
+        grid-template-columns: 1fr;
+    }
+
+    .vid {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+#playlist{
+    /* border: 2px solid black; */
+    height: auto;
+    width: 100%;
+}
+
+.playcontent{
+    /* border: 2px solid red; */
+    height: 40px;
+    padding-left: 10px;
+}
+
+.divider{
+    height: 11px;
+    background-color: white;
+    position: relative;
+    z-index: 20;
+}
+/* 
+.vid p{
+    color: white;
+} */
+
+.acc-btn{
+    background-image: url("img1.png");
+}
+
+/* Base adjustments for .lists */
+.lists {
+    width: 15vw;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Media Query for screens below 768px */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .lists {
+        width: 80%;
+        max-width: 300px;
+        background: #f9f9f9; /* Optional for better visibility */
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100vh;
+        z-index: 10;
+        overflow-y: auto;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .lists.active {
+        transform: translateX(100%);
+    }
+
+    .videos {
+        width: 100%;
+        margin-top: 16px;
+    }
+
+    #toggle-lists {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+/* Base adjustments for .lists */
+.lists {
+    width: 15vw;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Media Query for screens below 768px */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .lists {
+        width: 80%;
+        max-width: 300px;
+        background: #f9f9f9; /* Optional for better visibility */
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100vh;
+        z-index: 10;
+        overflow-y: auto;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .lists.active {
+        transform: translateX(100%);
+    }
+
+    .videos {
+        width: 100%;
+        margin-top: 16px;
+    }
+
+    #toggle-lists {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+}
+/* Apply cursor: pointer to all buttons */
+#button {
+    cursor: pointer;
+}
+
+/* Apply cursor: pointer to videos */
+.vid {
+    cursor: pointer;
+}
+/* Hidden class to hide the .lists element */
+.hidden {
+    display: none;
+}
+
+
+
+.playcontent {
+    display: flex;
+    align-items: center; /* Vertically aligns the text and image */
+    padding: 8px 10px;   /* Adds padding for better spacing */
+    cursor: pointer;     /* Makes it clickable */
+}
+
+.playcontent .icon {
+    height: 30px;
+    width: 35px;
+    margin-right: 8px;    /* Adds space between the icon and text */
+}
+
+.playcontent span {
+    font-size: 14px;      /* Adjusts text size */
+    color: #333;          /* Text color */
+}
+
